@@ -1,0 +1,239 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Hannotate SC";
+  background-color: #f8eee5;
+}
+
+/* header 
+===================*/
+
+.header {
+  width: 40%;
+  margin: 0 auto;
+  height: 20vh;
+}
+
+.header__logo {
+  text-align: center;
+  margin: 10px 0 ;
+}
+.header__logo img {
+  width: 270px;
+}
+
+
+/* main
+===================*/
+
+.main {
+  width: 60%;
+  margin: 0 auto;
+  
+  /* height: 80vh; */
+  
+}
+
+
+/* tag
+===================*/
+
+.tag__list {
+  display: flex;
+  position: relative;
+}
+
+.tag__list__item {
+  position: absolute;
+  font-size: 1.1em;
+  width: 70px;
+  height: 130px;
+  top: -30px;
+  text-align: center;
+  line-height: 2.5;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: bold;
+
+}
+
+.tag01 {
+  background: url(../images/tag-pink.PNG) no-repeat;
+  background-size: contain;
+  left: 21%;
+  
+}
+
+.tag02 {
+  background: url(../images/tag-yellow.PNG) no-repeat;
+  background-size: contain;
+  left: 33%;
+  
+}
+
+.tag03 {
+  background: url(../images/tag-green.PNG) no-repeat;
+  background-size: contain;
+  left: 45%;
+  
+}
+
+.tag04 {
+  background: url(../images/tag-blue.PNG) no-repeat;
+  background-size: contain;
+  left: 57%;
+  
+}
+
+.selectedTag {
+  z-index: 5000;
+}
+
+/* contents
+===================*/
+
+.container {
+  background: url(../images/note.PNG) no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 70vh;
+  width: 90%;
+  margin: 40px auto 0;
+  position: relative;
+  z-index: 1000;
+}
+.bg_checkbox {
+  width: 65%;
+  position: absolute;
+    top: 12.5%;
+    left: 50%;
+  transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+}
+
+.bg_checkbox__item {
+  position: relative;
+  height: 6.5vh;
+}
+
+.bg_checkbox input {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 60%;  
+  height: 32px;
+  cursor: pointer;
+}
+
+.text-box {
+  display: flex;
+  font-size: 1.2em;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.bg_checkbox input[type="checkbox"] + .text-box::before {
+  display: block;
+  content: "";
+  background: url(../images/box.PNG) no-repeat;
+  background-size: contain;
+  background-position: 1% 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.bg_checkbox input[type="checkbox"]:checked + .text-box::before {
+  content: "";
+  background: url(../images/checkbox.PNG) no-repeat;
+  background-size: contain;
+  background-position: 1% 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.text {
+  margin-left: 10px;
+  overflow-wrap: break-word;
+}
+.text-status {
+  border: 3px solid #202020;
+  border-radius: 5px;
+  font-size: .7em;
+  padding: 3px 5px;
+  font-weight: bold;
+  margin: 5px 10px 0 auto;
+  cursor: pointer;
+}
+.delete {
+  cursor: pointer;
+  
+}
+.delete img {
+  width: 30px;
+  height: 30px;
+  margin: 30px 0 25px 0;
+}
+
+span.done{
+  color: #818181;
+  position: relative;            /* 打ち消し線の位置を調整する時の基準点になるようにする */
+}
+span.done::before {
+  content: '';                  /* 擬似要素に実体を持たせる */
+  width: 100%;                  /* 打ち消し線の幅を指定する*/
+  height: 1px;                  /* 線を表示させるために1pxだけ高さを入れる */
+  border-top: solid 2px #000;     /* 二重線の上側になる線をひく */
+  position: absolute;             /* 線の位置を自由に動かせるようにする */
+  left: 0 ;                     /* 線の位置を左に揃える */
+  top: calc(50% - 4px);           /* 線の位置を真ん中から3px上にする */
+}
+span.done::after {
+  content: '';                  /* 擬似要素に実体を持たせる */
+  width: 100%;                  /* 打ち消し線の幅を指定する*/
+  height: 1px;                  /* 線を表示させるために1pxだけ高さを入れる */
+  border-bottom: solid 2px #000;  /* 二重線の上側になる線をひく */
+  position: absolute;             /* 線の位置を自由に動かせるようにする */
+  left: 0 ;                     /* 線の位置を左に揃える */
+  bottom: calc(50% - 5px);        /* 線の位置を真ん中から3px下にする */
+}
+
+
+
+/* form
+===================*/
+
+form {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+
+}
+
+.text-field {
+  border: 3px solid #202020;
+  border-radius: 5px;
+  padding: 3px 5px;
+  font-weight: bold;
+}
+
+.form-select {
+  border: 3px solid #202020;
+  border-radius: 5px;
+  padding: 3px 5px;
+  font-weight: bold;
+}
+
+.btn {
+  border: 3px solid #202020;
+  border-radius: 5px;
+  padding: 3px 10px;
+  background: #eee;
+  font-weight: bold;
+}
