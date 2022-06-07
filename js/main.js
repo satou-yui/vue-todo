@@ -19,8 +19,6 @@
       },
       mounted: function() {
         this.todos =JSON.parse(localStorage.getItem('todos')) ||[];
-
-        
       },
       computed: {
         filteredTodos: function () {
@@ -36,7 +34,6 @@
       methods: {
         addItem: function(){
           if (this.newItem == '') return;
-
           let item = {
             title: this.newItem,
             status: this.status
